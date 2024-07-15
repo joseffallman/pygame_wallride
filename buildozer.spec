@@ -50,10 +50,10 @@ requirements = pygame
 #garden_requirements =
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)/plan.png
+presplash.filename = src/plan.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)/plan.png
+icon.filename = src/plan.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait
