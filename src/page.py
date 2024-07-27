@@ -9,7 +9,7 @@ class Pages(Enum):
     Play = 2
     GameOver = 3
 
-# Definera vad en sida ska innehålla för funktioner.
+# Definiera vad en sida ska innehålla för funktioner.
 class Page(ABC):
     """Abstract class to define a page."""
 
