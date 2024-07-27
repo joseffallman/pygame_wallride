@@ -3,7 +3,6 @@ from pygame.locals import K_UP, K_DOWN, K_RIGHT, K_LEFT
 from page import Page, Pages
 from wall import Wall
 
-wall = pygame.image.load("src/wall.png")
 player = pygame.image.load("src/plan.png")
 playerH = pygame.image.load("src/plan_H.png")
 playerV = pygame.image.load("src/plan_V.png")
@@ -31,7 +30,7 @@ class PlayPage(Page):
     def new(self):
         # Skapa en ny vägg med skärmens storlekar.
         self.screen_w, self.screen_h = self.screen.get_size()
-        self.wall = Wall(wall, self.screen_w, self.screen_h)
+        self.wall = Wall(self.screen_w, self.screen_h)
 
         # Bestäm var spelaren ska vara i början
         self.player_x = self.screen_w//2
@@ -104,13 +103,13 @@ class PlayPage(Page):
                     self.keys[RIGHT]=True
 
             if event.type == pygame.KEYUP:
-                if event.key==pygame.K_UP:
+                if event.key==K_UP:
                     self.keys[UP]=False
-                elif event.key==pygame.K_LEFT:
+                elif event.key==K_LEFT:
                     self.keys[LEFT]=False
-                elif event.key==pygame.K_DOWN:
+                elif event.key==K_DOWN:
                     self.keys[DOWN]=False
-                elif event.key==pygame.K_RIGHT:
+                elif event.key==K_RIGHT:
                     self.keys[RIGHT]=False
 
             # Om ett finger trycks ned på touchskärmen.
