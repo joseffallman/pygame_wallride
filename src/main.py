@@ -14,7 +14,7 @@ myfont = pygame.font.SysFont('Comic Sans MS', 60)
 # Räkna ut skärmens storlek.
 info = pygame.display.Info()
 windoWidth, windowHeight = info.current_w,info.current_h
-display = pygame.display.set_mode(size=(windoWidth, windowHeight), flags=pygame.RESIZABLE)
+display = pygame.display.set_mode(size=(windoWidth, windowHeight))
 
 # Skapa en ny rityta i önskad storlek som skalas upp till att passa skärmen.
 width, height = 64*10, 64*8
@@ -30,28 +30,28 @@ all_pages[Pages.Start] = StartPage(all_pages, screen, myfont)
 all_pages[Pages.Play] = PlayPage(all_pages, screen, myfont)
 all_pages[Pages.GameOver] = GameOver(all_pages, screen, myfont)
 
-running_screen: Page = all_pages[Pages.Start]
+current_page: Page = all_pages[Pages.Start]
 # Loopa föralltid
 while 1:
     event_list = pygame.event.get()
 
     # Hantera knapptryckningar.
-    running_screen.handle_events(event_list, screen)
+    current_page.handle_events(event_list, screen)
 
     # Uppdatera vad som ska synas.
-    running_screen.update()
+    current_page.update()
 
     # Rita upp allt igen.
-    running_screen.render(screen)
+    current_page.render(screen)
 
     # Placera den uppskalade ritytan på skärmen.
     display.blit(screen,(0,0))
 
     # Gå till nästa sida.
-    if running_screen is not running_screen.next_screen:
-        new_screen = running_screen.next_screen
-        running_screen.restore()
-        running_screen = new_screen
+    if current_page is not current_page.next_page:
+        new_page = current_page.next_page
+        current_page.restore()
+        current_page = new_page
 
     # Uppdatera skärmen.
     pygame.display.flip()

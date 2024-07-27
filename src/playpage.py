@@ -83,8 +83,8 @@ class PlayPage(Page):
         # Kontrollera om väggen krockar med spelaren.
         if self.wall.collide(player_rect):
             # Gå till GameOver sidan och spara antal avklarade väggar.
-            self.next_screen = self.all_pages[Pages.GameOver]
-            self.next_screen.walls_completed = self.wall.walls_completed
+            self.next_page = self.all_pages[Pages.GameOver]
+            self.next_page.walls_completed = self.wall.walls_completed
 
     def handle_events(self, events: list[pygame.event.Event], screen: pygame.Surface):
         # Hantera alla tangentryckningar och touch

@@ -15,12 +15,12 @@ class Page(ABC):
     myfont: pygame.font.Font
 
     def __init__(self, all_pages: dict, screen: pygame.Surface, font: pygame.font.Font):
-        self.next_screen: Page = self
+        self.next_page: Page = self
         self.all_pages = all_pages
         self.myfont = font
 
     def restore(self):
-        self.next_screen = self
+        self.next_page = self
 
     def update(self):
         """Update or make changes to the screen. """

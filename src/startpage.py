@@ -38,4 +38,4 @@ class StartPage(Page):
             # Om tangen trycks ner och den tangenten är 'return' eller om fingret lyfts upp från skärmen.
             if (event.type == pygame.KEYDOWN and event.key==K_RETURN) or event.type == pygame.FINGERUP:
                 # Starta spelet
-                self.next_screen = self.all_pages[Pages.Play]
+                self.next_page = self.all_pages[Pages.Play]

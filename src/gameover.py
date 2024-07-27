@@ -43,4 +43,4 @@ class GameOver(Page):
             # Om tangen trycks ner och den tangenten är 'return' eller om fingret lyfts upp från skärmen.
             if (event.type == pygame.KEYDOWN and event.key == K_RETURN) or event.type == pygame.FINGERUP:
                 # Gå tillbaka till startskärmen
-                self.next_screen = self.all_pages[Pages.Start]
+                self.next_page = self.all_pages[Pages.Start]
