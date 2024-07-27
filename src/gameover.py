@@ -17,7 +17,7 @@ class GameOver(Page):
 
         # Bestäm vilken text som ska skrivas.
         text = "Game over"
-        text2 = f"You did {self.walls_completed} walls."
+        text2 = f"You completed {self.walls_completed} walls."
 
         # Räkna ut hur stor texten kommer bli
         text_w, text_h = self.myfont.size(text)
