@@ -4,11 +4,9 @@ from page import Page, Pages
 
 
 class GameOver(Page):
-    walls_completed: int
-
     def __init__(self, all_pages, screen, font):
         super().__init__(all_pages, screen, font)
-        self.walls_completed = 0
+        self.walls_completed: int = 0
 
     def render(self, screen: pygame.Surface):
         # Rita ut en vit spelplan

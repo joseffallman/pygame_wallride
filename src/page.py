@@ -12,7 +12,6 @@ class Pages(Enum):
 # Definera vad en sida ska innehålla för funktioner.
 class Page(ABC):
     """Abstract class to define a page."""
-    myfont: pygame.font.Font
 
     def __init__(self, all_pages: dict, screen: pygame.Surface, font: pygame.font.Font):
         self.next_page: Page = self
