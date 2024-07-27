@@ -4,10 +4,9 @@ from page import Page, Pages
 
 
 class StartPage(Page):
-
     def __init__(self, all_pages, screen, font):
         super().__init__(all_pages, screen, font)
-    
+
     def render(self, screen: pygame.Surface):
         # Rita ut en vit spelplan
         screen.fill((255,255,255))
@@ -33,7 +32,6 @@ class StartPage(Page):
             if event.type == pygame.QUIT: 
                 pygame.quit()
                 exit(0)
-
 
             # Om tangen trycks ner och den tangenten är 'retur' eller om fingret lyfts upp från skärmen.
             if (event.type == pygame.KEYDOWN and event.key==K_RETURN) or event.type == pygame.FINGERUP:
