@@ -13,7 +13,7 @@ class Pages(Enum):
 class Page(ABC):
     """Abstract class to define a page."""
 
-    def __init__(self, all_pages: dict, screen: pygame.Surface, font: pygame.font.Font):
+    def __init__(self, all_pages: dict[Pages], screen: pygame.Surface, font: pygame.font.Font):
         self.next_page: Page = self
         self.all_pages = all_pages
         self.myfont = font

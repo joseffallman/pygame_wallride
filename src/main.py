@@ -2,9 +2,9 @@
 import pygame
 
 from page import Page, Pages
-from gameover import GameOver
 from startpage import StartPage
 from playpage import PlayPage
+from gameover import GameOver
 
 # Initialize the game
 pygame.init()
